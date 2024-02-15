@@ -11,5 +11,13 @@ RSpec.describe MerchantFacade do
       expect(merchants.merchants).to be_an(Array)
       expect(merchants.merchants.first).to be_a(Merchant)
     end
+
+    it "gets merchants items" do
+      merchant_items = MerchantFacade.new.merchant_items(1)
+
+      expect(merchant_items).to be_an(Array)
+      expect(merchant_items.first).to be_a(Item)
+      expect(merchant_items.count).to eq(15)
+    end
   end
 end
